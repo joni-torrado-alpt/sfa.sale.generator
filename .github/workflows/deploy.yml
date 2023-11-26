@@ -16,7 +16,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '3.1'  # Adjust version as needed
+        dotnet-version: '8.0'  # Adjust version as needed
 
     - name: Build
       run: dotnet build --configuration Release
