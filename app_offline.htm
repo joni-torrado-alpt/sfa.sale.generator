@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta http-equiv="refresh" content="10"/>
+
+	<title>DPM | Manuntenção</title>
+	<style>
+	body 
+	{ 
+		margin: 0px;
+		text-align: center; 
+		font: 20px Helvetica, sans-serif; 
+		color: #333; 
+	}
+	h1 
+	{ 
+		font-size: 50px; 
+	}
+	article
+	{ 
+		margin: 150px;
+		display: block; 
+		text-align: left; 
+		width: 650px; 
+		margin: 0 auto; 
+	}
+	.status-bar{
+		width: 100%;
+		position: absolute;
+		bottom:0px;
+		left: 0px;
+	}
+	.lds-dual-ring {
+		margin: auto;
+		width: 50px;
+	}
+	.lds-dual-ring:after {
+		content: " ";
+		display: block;
+		width: 46px;
+		height: 46px;
+		margin: 1px;
+		border-radius: 50%;
+		border: 5px solid #333;
+		border-color: #333 transparent #333 transparent;
+		animation: lds-dual-ring 1.2s linear infinite;
+	}
+	@keyframes lds-dual-ring {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+	.progress-container
+	{
+		width: 100%;
+		color:#000!important;
+		background-color:#f1f1f1!important
+	}
+	.progress-bar{
+		color: #fff!important;
+    	background-color: #2196F3!important;
+	}
+	</style>
+</head>
+<body>
+	<article>
+		<h1>Aplicação em atualização...</h1>
+
+		<div>
+			<p>A aplicação está em atualização. Por favor, tente novamente dentro de momentos.</p>
+		</div>	
+	</article>
+
+	<div class="lds-dual-ring"></div>
+
+	<div class="status-bar" style="display:none">
+		<div class="progress-container">
+			<div class="progress-bar" style="width:#progress#%">#progress#%</div>
+		</div>
+	</div>
+</body>
+</html>

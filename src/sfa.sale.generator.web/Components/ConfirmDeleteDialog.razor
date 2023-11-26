@@ -1,0 +1,20 @@
+﻿<MudDialog Class="h-auto">
+    <DialogContent>
+        Are you sure you want to  <b><i>Delete</i></b>? Deleting can <b><i>not</i></b> be undone!
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Cancel</MudButton>
+        <MudButton Variant="Variant.Filled" Color="Color.Error" StartIcon="@Icons.Material.Filled.DeleteForever" OnClick="Submit">Delete!</MudButton>
+    </DialogActions>
+</MudDialog>
+@code {
+    [CascadingParameter] MudDialogInstance MudDialog { get; set; }
+    [Parameter] public string Message { get; set; }
+
+    void Cancel() => MudDialog.Cancel();
+    Task Submit()
+    {
+        MudDialog.Close(DialogResult.Ok(true));
+        return Task.CompletedTask;
+    }
+}

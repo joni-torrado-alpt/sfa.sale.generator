@@ -1,0 +1,95 @@
+﻿@using MudBlazor.Utilities;
+@implements IDisposable
+@inherits LayoutComponentBase
+@* @inject AuthenticationStateProvider AuthenticationStateProvider *@
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <div class="main">
+        <div class="top-row px-4 d-flex justify-space-between">
+            <div class="flex-column">
+                <strong>Welcome @_userName</strong>
+            </div>
+            <div class="flex-column">
+                <MudColorPicker ColorPickerView="ColorPickerView.Palette" Text="@_selectedThemeColor" TextChanged="ThemeColorChanged" Palette="_customPalette" />
+            </div>
+        </div>
+
+        <div class="content px-4">
+            @Body
+        </div>
+    </div>
+</div>
+
+<style>
+    :root {
+        --theme-color: @_selectedThemeColor;
+    }
+</style>
+
+<MudThemeProvider />
+<MudDialogProvider MaxWidth=MaxWidth.Medium FullWidth="true" />
+<MudSnackbarProvider />
+
+@code {
+    [Inject] public EventNotifier EventNotifier { get; set; }
+    [Inject] public ISnackbar Snackbar { get; set; }
+    // [Inject] public Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage.ProtectedLocalStorage ProtectedLocalStorage { get; set; }
+
+    private const string THEME_COLOR = "DPM_Theme_Color";
+    private string _selectedThemeColor = "#408cd8";
+
+    private bool _disposedValue;
+    private string _userName;
+
+     private IEnumerable<MudColor> _customPalette { get; set; } = new MudColor[]
+    {
+        "#000000", "#424242", "#9C27B0", "#3F51B5", "#408cd8",
+    };
+
+    protected override async Task OnInitializedAsync()
+    {
+        // var savedThemeColor = await ProtectedLocalStorage.GetAsync<string>(THEME_COLOR);
+        // if (savedThemeColor.Success)
+        //     _selectedThemeColor = savedThemeColor.Value;
+
+        // EventNotifier.OnNotify += ProcessNotification;
+        // var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        // _userName = Helper.ResolveWindowsUserName(authState.User.Identity.Name);
+        await base.OnInitializedAsync();
+    }
+
+    protected void ProcessNotification(object sender, EventNotificationMessageArgs e)
+    {
+        Snackbar.Add(e.Message, e.Severity);
+    }
+
+    protected async Task ThemeColorChanged(string color)
+    {
+        _selectedThemeColor = color;
+        // await ProtectedLocalStorage.SetAsync(THEME_COLOR, color);
+    }
+
+    public void Dispose()
+    {
+        // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+        Dispose(disposing: true);
+        GC.SuppressFinalize(this);
+    }
+ 
+    protected virtual void Dispose(bool disposing)
+    {
+        if (!_disposedValue)
+        {
+            if (disposing)
+            {
+                EventNotifier.OnNotify -= ProcessNotification;
+            }
+
+            _disposedValue = true;
+        }
+    }
+}

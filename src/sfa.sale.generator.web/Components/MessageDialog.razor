@@ -1,0 +1,14 @@
+﻿<MudDialog>
+    <DialogContent>
+        <textarea class="form-control" rows="17" readonly>@Message</textarea>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Exit</MudButton>
+    </DialogActions>
+</MudDialog>
+@code {
+    [CascadingParameter] MudDialogInstance MudDialog { get; set; }
+    [Parameter] public string Message { get; set; }
+
+    void Cancel() => MudDialog.Cancel();
+}

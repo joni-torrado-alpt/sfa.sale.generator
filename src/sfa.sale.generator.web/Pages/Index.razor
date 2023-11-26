@@ -1,0 +1,68 @@
+﻿@page "/"
+@using Humanizer;
+@using sfa.sale.generator.core
+@if (_isLoading)
+{
+    <Loading />
+}
+<MudDataGrid @ref="_dataGridRef"
+             T="SfaContext"
+             @bind-SelectedItem="_selectedSfaContext"
+             RowsPerPage="5"
+             ServerData="GetSfaContextsData"
+             Hover Dense
+             RowClick="GetLogs"
+             RowClassFunc='(x,y ) => x == _selectedSfaContext ? "selected-row" : ""'
+>
+    <ToolBarContent>
+        <MudText Typo="Typo.h6">Sales</MudText>
+        <MudSpacer />
+        <MudTextField Value="_search"
+                      ValueChanged="SearchChanged"
+                      T="string"
+                      Placeholder="Search" Adornment="Adornment.Start" Immediate
+                      AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+    </ToolBarContent>
+    <Columns>
+        <PropertyColumn Property="x => x.Id" />
+        <PropertyColumn Property="x => x.Environment" />
+        <PropertyColumn Property="x => x.ClientIdType" />
+        <PropertyColumn Property="x => x.ClientIdValue" />
+        <PropertyColumn Property="x => x.IsCompleted" Title="Is Completed" />
+        <PropertyColumn Property="x => x.ClientAddress" />
+        <PropertyColumn Property="x => x.Offer" />
+        <PropertyColumn Property="x => x.SfaSales" />
+        <PropertyColumn Property="x => x.CreatedOn" />
+        <PropertyColumn Property="x => x.CreatedBy" />
+        <PropertyColumn Property="x => x.ModifiedOn" />
+        <PropertyColumn Property="x => x.ModifiedBy" />
+    </Columns>
+    <PagerContent>
+        <MudGrid Class="d-flex align-center">
+            <MudItem xs="12" md="6" Class="pb-0">
+                <MudTooltip Text="Refresh">
+                    <MudIconButton Icon="@Icons.Material.Outlined.Refresh" Color="Color.Info" OnClick="Refresh" />
+                </MudTooltip>
+            </MudItem>
+            <MudItem xs="12" md="6" Class="pb-0">
+                <MudDataGridPager T="SfaContext" />
+            </MudItem>
+        </MudGrid>
+    </PagerContent>
+    <LoadingContent>
+        <Loading />
+    </LoadingContent>
+</MudDataGrid>
+
+<MudAlert Severity="Severity.Info" Variant="Variant.Outlined" Class="mt-5">
+    <MudText Typo="Typo.h6">SfaContext Package Installer (OPS Tool)</MudText>
+    <MudText Typo="Typo.subtitle1">Runs at the following times:</MudText>
+    <MudText Typo="Typo.subtitle2">QA</MudText>
+    <ul>
+        <li>08:30</li>
+        <li>12:15 | 13:15</li>
+        <li>18:15 | 18:45 | 19:15 | 19:45 | 20:15 | 20:45</li>
+    </ul>
+    <MudText Typo="Typo.subtitle2">QFIX</MudText>
+    From 08:00 to 23:00, each 30 minutes.
+</MudAlert>

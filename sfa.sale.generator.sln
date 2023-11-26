@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{65514FD8-FE1E-4E63-861A-1EAF263A17B4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sfa.sale.generator.core", "src\sfa.sale.generator.core\sfa.sale.generator.core.csproj", "{D4D8B650-C3DE-4507-8D87-D2D4034A7478}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sfa.sale.generator.web", "src\sfa.sale.generator.web\sfa.sale.generator.web.csproj", "{49092E37-1490-4843-954B-A2F5F2B7A3A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sfa.automation.benchmark", "src\sfa.sale.generator.benchmark\sfa.automation.benchmark.csproj", "{1ECADF91-7563-4BC8-9357-53A541F0EDD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sfa.automation.playwright", "src\sfa.sale.generator.playwright\sfa.automation.playwright.csproj", "{7A9FDA34-7463-4E93-BBED-117996772590}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sfa.automation.selenium", "src\sfa.sale.generator.Selenium\sfa.automation.selenium.csproj", "{43E582D9-6028-473F-B2D8-1ACE9EFE481C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4D8B650-C3DE-4507-8D87-D2D4034A7478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4D8B650-C3DE-4507-8D87-D2D4034A7478}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4D8B650-C3DE-4507-8D87-D2D4034A7478}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4D8B650-C3DE-4507-8D87-D2D4034A7478}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49092E37-1490-4843-954B-A2F5F2B7A3A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49092E37-1490-4843-954B-A2F5F2B7A3A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49092E37-1490-4843-954B-A2F5F2B7A3A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49092E37-1490-4843-954B-A2F5F2B7A3A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ECADF91-7563-4BC8-9357-53A541F0EDD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ECADF91-7563-4BC8-9357-53A541F0EDD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ECADF91-7563-4BC8-9357-53A541F0EDD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ECADF91-7563-4BC8-9357-53A541F0EDD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A9FDA34-7463-4E93-BBED-117996772590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A9FDA34-7463-4E93-BBED-117996772590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A9FDA34-7463-4E93-BBED-117996772590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A9FDA34-7463-4E93-BBED-117996772590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43E582D9-6028-473F-B2D8-1ACE9EFE481C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43E582D9-6028-473F-B2D8-1ACE9EFE481C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43E582D9-6028-473F-B2D8-1ACE9EFE481C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43E582D9-6028-473F-B2D8-1ACE9EFE481C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D4D8B650-C3DE-4507-8D87-D2D4034A7478} = {65514FD8-FE1E-4E63-861A-1EAF263A17B4}
+		{49092E37-1490-4843-954B-A2F5F2B7A3A0} = {65514FD8-FE1E-4E63-861A-1EAF263A17B4}
+		{1ECADF91-7563-4BC8-9357-53A541F0EDD9} = {65514FD8-FE1E-4E63-861A-1EAF263A17B4}
+		{7A9FDA34-7463-4E93-BBED-117996772590} = {65514FD8-FE1E-4E63-861A-1EAF263A17B4}
+		{43E582D9-6028-473F-B2D8-1ACE9EFE481C} = {65514FD8-FE1E-4E63-861A-1EAF263A17B4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1EEB26A-63E7-438F-B60F-45A8C40D2CB7}
+	EndGlobalSection
+EndGlobal
